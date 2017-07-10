@@ -71,15 +71,25 @@ namespace MethodsPractice
             }*/
             //FavoriteFood("Mike" , "steak");
             //RetirementCalculator(48);
-            double hoursWorked = 42.3d;
+            /*double hoursWorked = 42.3d;
             double hourlyWage = 12.50d;
 
             Console.WriteLine( "Your monthly wage is {0}" ,WageCalculator(hoursWorked, hourlyWage));
+            */
+            Console.WriteLine("What is your first name?");
+            string firstName = Console.ReadLine();
+            Console.WriteLine("What is your last name?");
+            string lastName = Console.ReadLine();
+            fullName(firstName, lastName);
+
+            BankAccount(120000, 119000, 35);
+            Console.WriteLine("Your current balance is: {0}", BankAccount(120000, 119000, 35));
 
         }
         //Create a method called FavoriteFood
         //It should take 2 string parameters.  One representing a name,
-        //and the other representing a favorite food.
+        //and the other representing a favorite food
+
         //the return type should be void
         //the method should concatenate.
         /*public static void FavoriteFood(string name, string foodName)
@@ -98,11 +108,19 @@ namespace MethodsPractice
         {
             int retirementAge = 65 - userAge;
             Console.WriteLine("The user will retire in {0} years", retirementAge);
-        }*/
-        public static double WageCalculator(double hoursWorkedWeekly, double hourlyWage)
+        }        public static double WageCalculator(double hoursWorkedWeekly, double hourlyWage)
         {
             double monthlyWage = (hoursWorkedWeekly * 52 * hourlyWage) / 12;
             return monthlyWage;
+        }*/
+        public static double BankAccount(double amount, double bills ,double lateCharge)
+        {
+            double totalAmount = amount - bills - lateCharge;
+            return totalAmount;
+        }
+        public static void fullName(string firstName, string lastName)
+        {
+            Console.WriteLine("Customer's full name is: {0} {1}", firstName, lastName);
         }
     }
 }
