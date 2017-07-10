@@ -19,13 +19,22 @@ namespace MethodsPractice
             //This means a method will never be created inside another method or
             //memmber of the class.
 
-            Console.WriteLine("Please enter your first number to be added.");
+            /*Console.WriteLine("Please enter your first number to be added.");
             int numberOne = int.Parse(Console.ReadLine());
             Console.WriteLine("Please enter your first number to be added.");
             int numberTwo = int.Parse(Console.ReadLine());
 
             int answer = ADD(numberOne, numberTwo);
-            Console.WriteLine("The sum of your numbers is : " + answer);
+            Console.WriteLine("The sum of your numbers is : " + answer);*/
+
+            RobotWarning("Will Robinson");
+
+            string myBirthMonth = "September";
+            string myFriendBirthMonth = "october";
+            string myVehicle = Vehicle(myBirthMonth);
+            string myFriendVehicle = Vehicle(myFriendBirthMonth);
+            Console.WriteLine("My futrue vehicle is {0} and Jordan's" +
+                " future vehicle is {1}", myVehicle,myFriendVehicle);
 
         }
 
@@ -39,9 +48,26 @@ namespace MethodsPractice
             int sum = firstNumber + secondNumber;
 
             return sum;
-            //void for a method that does not need to return a value.  When you use void return
-            //tpye, we don't need to use the keyword "return" type.
+       
         }
-
+        //void for a method that does not need to return a value.  When you use void return
+        //tpye, we don't need to use the keyword "return" type.
+        public static void RobotWarning(string name)
+        {
+            Console.WriteLine("Danger, " + name + " !!");
+        }
+        public static string Vehicle(string birthMonth)
+        {
+            string vehicleFortune;
+            if (birthMonth.ToLower() == "september" || birthMonth.ToLower() == "october")
+            {
+                vehicleFortune = "Hoverboard";
+            }
+            else
+            {
+                vehicleFortune = "SUV";
+            }
+            return vehicleFortune;
+         }
     }
 }
